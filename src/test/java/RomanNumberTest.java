@@ -25,4 +25,9 @@ public class RomanNumberTest {
     public void givenIV_then_return4() {
         assertEquals(4, romanNumber.parse("IV"));
     }
+
+    @Test
+    public void givenV_then_return5() {
+        assertEquals(5, romanNumber.parse("V"));
+    }
 }
