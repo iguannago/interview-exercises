@@ -10,7 +10,9 @@ class RomanNumber {
                 return parse(roman.substring(1)) - 1;
             if (roman.startsWith("VI"))
                 return 5 + parse(roman.substring(1));
-            return parse(roman.substring(1)) - 1;
+            if (roman.startsWith("IX"))
+                return parse(roman.substring(1)) - 1;
+            return 10 + parse(roman.substring(1));
         }
     }
 }
