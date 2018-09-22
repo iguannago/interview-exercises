@@ -1,11 +1,11 @@
-public class RomanNumber {
-    public int parse(String romanNumber) {
-        if ("I".equals(romanNumber)) return 1;
-        if ("V".equals(romanNumber)) return 5;
+class RomanNumber {
+    int parse(String roman) {
+        if ("I".equals(roman)) return 1;
+        if ("V".equals(roman)) return 5;
         else {
-            if (romanNumber.startsWith("II"))
-                return 1 + parse(romanNumber.substring(1));
-            return parse(romanNumber.substring(1)) - 1;
+            if (roman.startsWith("II"))
+                return 1 + parse(roman.substring(1));
+            return parse(roman.substring(1)) - 1;
         }
     }
 }

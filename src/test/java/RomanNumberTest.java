@@ -1,33 +1,19 @@
 import static org.junit.Assert.assertEquals;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class RomanNumberTest {
 
     private RomanNumber romanNumber = new RomanNumber();
 
     @Test
-    public void givenI_then_return1() {
-        assertEquals("Roman parsed 1 is incorrect", 1, romanNumber.parse("I"));
+    @Parameters({"I, 1", "II, 2", "III, 3", "IV, 4", "V, 5"})
+    public void givenI_then_return1(String roman, int expected) {
+        assertEquals(expected, romanNumber.parse(roman));
     }
 
-    @Test
-    public void givenII_then_return2() {
-        assertEquals(2, romanNumber.parse("II"));
-    }
-
-    @Test
-    public void givenIII_then_return3() {
-        assertEquals(3, romanNumber.parse("III"));
-    }
-
-    @Test
-    public void givenIV_then_return4() {
-        assertEquals(4, romanNumber.parse("IV"));
-    }
-
-    @Test
-    public void givenV_then_return5() {
-        assertEquals(5, romanNumber.parse("V"));
-    }
 }
