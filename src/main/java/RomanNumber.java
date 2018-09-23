@@ -10,7 +10,6 @@ class RomanNumber {
             if (firstChar >= secondChar)
                 return firstChar + parse(roman.substring(1));
             return parse(roman.substring(1)) - firstChar;
-
         }
     }
 }
