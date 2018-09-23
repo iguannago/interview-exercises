@@ -3,16 +3,14 @@ class RomanNumber {
         if ("I".equals(roman)) return 1;
         if ("V".equals(roman)) return 5;
         if ("X".equals(roman)) return 10;
+        if ("L".equals(roman)) return 50;
         else {
-            if (roman.startsWith("II"))
-                return 1 + parse(roman.substring(1));
-            if (roman.startsWith("IV"))
-                return parse(roman.substring(1)) - 1;
-            if (roman.startsWith("VI"))
-                return 5 + parse(roman.substring(1));
-            if (roman.startsWith("IX"))
-                return parse(roman.substring(1)) - 1;
-            return 10 + parse(roman.substring(1));
+            int firstChar = parse(roman.substring(0, 1));
+            int secondChar = parse(roman.substring(1, 2));
+            if (firstChar >= secondChar)
+                return firstChar + parse(roman.substring(1));
+            return parse(roman.substring(1)) - firstChar;
+
         }
     }
 }
