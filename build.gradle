@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'net.researchgate.release' version '2.6.0'
+
 }
 
 group 'ui.gov.hmcts.reform.sscs'
